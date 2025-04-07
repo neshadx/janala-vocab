@@ -192,3 +192,23 @@ const show = (id) => {
     document.getElementById("name").value = "";
     document.getElementById("password").value = "";
   }
+
+  
+  /* Get started btn */
+  document.getElementById("btn-get").addEventListener("click", function (event) {
+    validateInput();
+  });
+  
+  /* Logout Button Task */
+  document
+    .getElementById("btn-logout")
+    .addEventListener("click", function (event) {
+      makeHide("nav-bar");
+      makeHide("learn-header");
+      makeHide("vocabulary-content");
+      makeHide("accordion");
+      show("hero-section");
+    });
+  
+  loadBtnCategory();
+  
