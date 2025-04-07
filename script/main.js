@@ -158,3 +158,37 @@ const makeHide = (id) => {
 const show = (id) => {
   document.getElementById(id).style.display = "block";
 };
+
+
+  /* Hide content */
+  makeHide("nav-bar");
+  makeHide("learn-header");
+  makeHide("vocabulary-content");
+  makeHide("accordion");
+  
+  /* Get started btn task */
+  function validateInput() {
+    const name = document.getElementById("name").value;
+  
+    const password = document.getElementById("password").value;
+  
+    if (name === "") {
+      alert("A name is required to continue");
+      return;
+    } else if (password === "") {
+      alert("Please enter your password");
+      return;
+    } else if (password !== "123456") {
+      alert("Incorrect password. Please try again");
+      return;
+    }
+    alert("You’re in! Successfully logged in");
+  
+    show("nav-bar");
+    show("learn-header");
+    show("vocabulary-content");
+    show("accordion");
+    makeHide("hero-section");
+    document.getElementById("name").value = "";
+    document.getElementById("password").value = "";
+  }
