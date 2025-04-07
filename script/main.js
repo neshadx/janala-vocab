@@ -38,3 +38,18 @@ const loadLessonCategory = (id) => {
       displayLesson(data.data);
     });
 };
+
+ 
+const displayBtnCategory = (lessons) => {
+  lessons.forEach((element) => {
+    const lessonBtnContainer = document.getElementById("Lesson-btn");
+
+    const lessonBtnDiv = document.createElement("div");
+    lessonBtnDiv.innerHTML = `
+        <button id="btn-${element.level_no}" onclick ="loadLessonCategory(${element.level_no})"
+        class="btn btn-sm text-[#422AD5] text-base btn-outline font-semibold hover:bg-[#422AD5] hover:text-white"><span><i class="fa-solid fa-book-open">
+        </i></span>Lesson -${element.level_no} </button>
+        `;
+    lessonBtnContainer.append(lessonBtnDiv);
+  });
+};
