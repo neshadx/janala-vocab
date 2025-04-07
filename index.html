@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English-জানালা</title>
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+  
+    <script src="https://kit.fontawesome.com/19fe7387d6.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .font-poppins {
+            font-family: "Poppins", sans-serif;
+        }
+
+        .font-hind-siliguri {
+            font-family: "Hind Siliguri", sans-serif;
+        }
+
+        .active {
+            background-color: #422AD5;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="font-poppins">
+
+    <header>
+        <nav id="nav-bar">
+            <div
+                class="navbar bg-base-100 shadow-sm fixed top-0 left-0 w-full z-50 flex justify-between items-center gap-10">
+                <div>
+                    <a id="main-btn" href="#main-btn" class="btn  btn-ghost text-2xl font-bold">English <span><img
+                                src="images/logo.png" alt=""></span>
+                        <span class="font-hind-siliguri"> জানালা</span></a>
+                </div>
+                <div class=" flex gap-5 ">
+                    <a href="#accordion"
+                        class="btn btn-outline text-[#422AD5] text-lg font-semibold hover:bg-[#422AD5] hover:text-white"><span><i
+                                class="fa-solid fa-circle-question"></i></span>FAQ</a>
+
+                    <a href="#learn-header"
+                        class="btn btn-outline text-[#422AD5] text-lg font-semibold hover:bg-[#422AD5] hover:text-white "><span><i
+                                class="fa-solid fa-book-open"></i></span>Learn</a>
+                    <a id="btn-logout"
+                        class="btn btn-outline text-[#422AD5] text-lg font-semibold hover:bg-[#422AD5] hover:text-white"><span><i
+                                class="fa-solid fa-arrow-right-from-bracket"></i></span>Logout</a>
+
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero-section">
+            <div class="hero bg-base-200 min-h-screen">
+                <div class="hero-content flex-col lg:flex-row-reverse">
+                    <img src="images/hero-student.png" class="max-w-md rounded-lg " />
+                    <div>
+                        <h1 class="text-5xl font-bold"><span class="text-[#00BCFF]">English</span> is Easy!!</h1>
+                        <p class="py-6">
+                            <span class="font-hind-siliguri ">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন
+                                হন অথবা আপনার দক্ষতা বাড়াতে চান,<br>
+                                আমাদের</span> <span class="font-bold">Interactive Lessons</span><span
+                                class="font-hind-siliguri"> আপনাকে নিয়ে যাবে অন্য
+                                একটি</span>
+                            <span class="font-bold">Level</span> <span class="font-hind-siliguri">এ</span>
+                        </p>
+                        <div class="flex flex-col gap-4">
+                            <input id="name" type="text" placeholder="Enter your name" required
+                                class="input input-neutral" />
+                            <input id="password" type="password" required placeholder="Enter Login Code(123456)"
+                                class="input input-neutral" />
+                        </div>
+                        <button id="btn-get" class="btn btn-primary mt-5">Get Started</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vocabulary section -->
+        <section id="learn-header" class="w-11/12 mx-auto mt-20 scroll-mt-40">
+            <h1 class="text-5xl font-bold text-center py-4 my-3"><span class="text-[#00BCFF]">Let's</span>
+                Learn
+                Vocabularies</h1>
+            <div id="Lesson-btn" class="flex justify-center gap-5 "> </div>
+        </section>
+
+        <!-- Loader section -->
+        <section id="loader" class="text-center py-10 hidden">
+            <span class="loading loading-dots loading-xl"></span>
+        </section>
+
+        <!-- All content show -->
+        <section id="vocabulary-content" class="w-11/12 mx-auto mt-20">
+
+            <div id="loader-details">
+                <div id="lesson-details" class="grid grid-cols-3 col-span-full gap-5 ">
+                    <!-- No content show section -->
+                    <div class="grid grid-cols-1 col-span-full ">
+                        <div class="text-center bg-base-200  py-8 rounded-lg space-y-5 h-52">
+                            <p class="text-sm font-semibold opacity-50 mt-10 font-hind-siliguri">আপনি এখনো কোন <span
+                                    class="font-bold">Lesson
+                                    Select</span> করেননি</p>
+                            <h1 class="text-2xl font-semibold font-hind-siliguri">একটি <span class="font-bold">Lesson
+                                    Select</span>
+                                করুন।</h1>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Accordion section  -->
+        <section id="accordion" class="w-11/12 mx-auto bg-base-200 rounded-lg mt-20 scroll-mt-40">
+            <h1 class="text-4xl font-bold text-center py-4 "><span class="text-[#00BCFF]">Frequently</span> Asked
+                Questions
+            </h1>
+            <div class="space-y-5 p-5">
+                <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                    <input type="radio" name="my-accordion-3" checked="checked" />
+                    <div class="collapse-title font-semibold">1. What is the difference between var, let, and const?
+                    </div>
+                    <div class="collapse-content text-base"><span class="text-lg font-bold">Answer:</span> var: which is function scope that can be re-declared and re-assigned, hoisted with undefined. let: is block-scoped, allows changes but keeps things tidy by not letting you re-declare in the same scope. const: It also has block scope, and cannot be re-assigned.</div>
+                </div>
+                <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title font-semibold">2. What is the difference between map(), forEach(),
+                        and
+                        filter()?</div>
+                    <div class="collapse-content text-sm"><span class="text-lg font-bold">Answer: </span> map() transforms each element of an array and returns a new array, while forEach() simply iterates over the elements without returning anything. On the other hand, filter() creates a new array by selecting elements that meet a specified condition.</div>
+                </div>
+                <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title font-semibold">3. What are arrow functions, and how are they
+                        different
+                        from
+                        regular functions?</div>
+                    <div class="collapse-content text-sm"><span class="text-lg font-bold">Answer: </span>Arrow functions are a concise way to write functions using the => syntax. They differ from regular functions in that they don’t have their own this context and instead inherit this from the surrounding scope. Additionally, arrow functions don’t have an arguments object, unlike regular functions, which have their own this and arguments objects.</div>
+                </div>
+
+                <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title font-semibold">4. How do JavaScript Promises work?</div>
+                    <div class="collapse-content text-sm"> <span class="text-lg font-bold">Answer:</span> JavaScript Promises represent the outcome of an asynchronous operation. A Promise can be pending, fulfilled with a value, or rejected with an error. Promises use then() to handle successful results, catch() to handle errors, and finally() to run code after the promise settles, regardless of the outcome.</div>
+                </div>
+
+                <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title font-semibold">5. How does closure work in JavaScript?</div>
+                    <div class="collapse-content text-sm"><span class="text-lg font-bold">Answer:</span> Closures in JavaScript occur when an inner function retains access to variables from its outer function even after the outer function has executed. This allows the inner function to remember and manipulate the variables of the outer scope. Closures are commonly used for data encapsulation and maintaining state in asynchronous code or event handlers.</div>
+                </div>
+            </div>
+        </section>
+
+
+       
+        <dialog id="word_details" class="modal">
+            <div class="modal-box">
+                <div id="wordContainer-details" class="bg-slate-100 rounded-lg p-6 space-y-4">
+
+                </div>
+                <div class="mt-5">
+                    <form method="dialog">
+                        <button class="btn  hover:bg-[#422AD5] hover:text-white">Complete Learning</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+
+
+    </main>
+    <footer class="bg-base-200 p-6 mt-20">
+        <div class="flex justify-between items-center w-11/12 mx-auto   ">
+            <div class="space-y-3 ">
+                <h2 class="flex text-xl font-semibold">English <span><img src="images/logo.png" alt=""></span>
+                    <span class="font-hind-siliguri">জানালা</span>
+                </h2>
+                <p class="text-lg font-semibold"><span class="font-hind-siliguri">ইংরেজি শিখুন সহজে</span></p>
+                <p class="text-lg font-semibold">Providing ED-Tech Applications since 2025</p>
+            </div>
+            <div>
+                <h2 class="text-lg font-semibold">Follow us</h2>
+                <div class="text-2xl space-x-4">
+                    <a id="facebook" href="https://www.facebook.com/neshadz" target="_blank"> <i class="fa-brands fa-facebook"></i></a>
+                    <a id="youtube" href="https://www.youtube.com/c/ProgrammingHero" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a id="instagram" href="https://www.instagram.com/neshadx" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script/main.js"></script>
+</body>
+
+</html>
