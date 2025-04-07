@@ -53,3 +53,47 @@ const displayBtnCategory = (lessons) => {
     lessonBtnContainer.append(lessonBtnDiv);
   });
 };
+
+
+const loadLessonDetails = (wordId) => {
+  const url = `https://openapi.programming-hero.com/api/word/${wordId}`;
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => displayLessonDetails(data.data));
+};
+
+const displayLessonDetails = (wordDetails) => {
+  document.getElementById("word_details").showModal();
+  const wordContainerDetails = document.getElementById("wordContainer-details");
+  wordContainerDetails.innerHTML = `
+           <h1 class="text-2xl font-semibold font-hind-siliguri">${
+             wordDetails.word
+           }<span>(</span><span><i
+                        class="fa-solid fa-microphone"></i>:
+                    ${wordDetails.pronunciation}</span><span>)</span>
+            </h1>
+            <div>
+                <h2 class="text-lg font-semibold">Meaning</h2>
+                <p class="text-lg font-semibold font-hind-siliguri">${
+                  wordDetails.meaning
+                    ? `${wordDetails.meaning}`
+                    : `অর্থ পাওয়া যায়নি `
+                }</p>
+            </div>
+            <div>
+                <h2 class="text-lg font-semibold">Example</h2>
+                <p class="text-lg font-medium">${wordDetails.sentence}</p>
+            </div>
+             <div>
+                <h2 class="text-lg font-semibold font-hind-siliguri">সমার্থক শব্দ গুলো</h2>
+                <div class="space-x-3 space-y-2 ">
+                    <div class="space-x-3 space-y-2">
+  ${wordDetails.synonyms && wordDetails.synonyms.length > 0
+    ? wordDetails.synonyms.map(synonym => synonym ? `<button class="btn">${synonym}</button>` : "").join("")
+    : ""}
+</div>
+
+                </div>
+            </div>
+  `;
+};
