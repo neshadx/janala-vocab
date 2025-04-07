@@ -14,3 +14,27 @@ function removeActiveClass() {
     btn.classList.remove("active");
   }
 }
+
+
+const loadBtnCategory = async () => {
+  const response = await fetch(
+    "https://openapi.programming-hero.com/api/levels/all"
+  );
+
+  const data = await response.json();
+  displayBtnCategory(data.data);
+};
+
+const loadLessonCategory = (id) => {
+  showLoader();
+
+  const url = `https://openapi.programming-hero.com/api/level/${id}`;
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      removeActiveClass();
+      const clickBtn = document.getElementById(`btn-${id}`);
+      clickBtn.classList.add("active");
+      displayLesson(data.data);
+    });
+};
